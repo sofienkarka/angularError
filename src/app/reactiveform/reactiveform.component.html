@@ -1,0 +1,40 @@
+<form [formGroup]="userForm">
+    Informations Generales: <br />
+    <br />
+    Nom :
+    <input
+      type="text"
+      formControlName="nom"
+      required
+      placeholder="Donner votre nom"
+      id="nom"
+    />
+    <span *ngIf="userForm.controls['nom'].invalid && userForm.controls['nom'].touched">error</span>
+    <br />
+    <br />
+    Email:
+    <input type="email" formControlName="mail" placeholder="Donner votre Email" />
+    <span *ngIf="userForm.controls['mail'].invalid && userForm.controls['mail'].touched"> error</span>
+  <br />
+  <br />
+  <form formGroupName="payementInformations">
+    Informations de payement: <br />
+    <br />
+    Type de carte:
+    <input type="text" formControlName="typeCarte" /> <br />
+    <br />
+    Numero de carte:<input type="text" formControlName="numero" /> <br />
+    <br />
+    Date expiration:<input type="text" formControlName="dateExpiration" /> <br />
+    <br />
+    Code:<input type="text" formControlName="code" />
+  </form>
+  <button (click)="affiche()">Entrer</button> <br />
+</form> <br> <br>
+<form >
+    <mat-form-field appearance="legacy">
+        <mat-label>Legacy form field</mat-label>
+        <input matInput placeholder="Placeholder">
+    
+      </mat-form-field> 
+</form>
